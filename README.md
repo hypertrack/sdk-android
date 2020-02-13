@@ -21,6 +21,8 @@ We use Publishable Key to identify your devices. To get one:
  - [Add Hypertrack SDK](#step-1-add-hypertrack-sdk)
  - [Enable server to device communication](#step-2-enable-server-to-device-communication)
  - [Initialize SDK](#step-3-initialize-sdk)
+ - [Identify your device](#step-4-identify-your-devices)
+ - [Verify integration](#step-5-verify-your-integration)
 
 #### Step 1. Add Hypertrack SDK
 Add following lines to your applications `build.gradle`:
