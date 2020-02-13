@@ -103,10 +103,6 @@ curl https://v3.api.hypertrack.com/devices/{deviceId}/stop \
 
 ## Advanced integration
 
-###### Turn tracking on and off
-Depending on your needs, you can always _stop_ and _start_ tracking, invoking [`.stop()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/HyperTrack.html#stop--) and [`start()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/HyperTrack.html#start--) SDK methods.
-It is recommended to store reference to SDK instance in order to use it for further actions. You can determine current sdk state using [`isRunning()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/HyperTrack.html#isRunning--) call.
-
 ###### Add SDK state listener to catch events.
 You can subscribe to SDK status changes [`addTrackingListener`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/HyperTrack.html#addTrackingListener-com.hypertrack.sdk.TrackingStateObserver.OnTrackingStateChangeListener-) and handle them in the appropriate methods [`onError(TrackingError)`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onError-com.hypertrack.sdk.TrackingError-) [`onTrackingStart()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onTrackingStart--) [`onTrackingStop()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onTrackingStop--)
 
