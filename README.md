@@ -72,7 +72,7 @@ Also make sure you've requested permissions somewhere in your app. HyperTrack ac
 
 HyperTrack uses string device identifiers that could be obtained from sdk instance
 ```java
-    String deviceId = sdkInstance.getDeviceID();
+   String deviceId = sdkInstance.getDeviceID();
 ```
 ```kotlin
    val deviceId = sdkInstance.deviceID
