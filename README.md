@@ -56,7 +56,7 @@ If you already use firebase push notifications you can extend `HyperTrackMessagi
 Check out [Quickstart app](https://github.com/hypertrack/quickstart-android/) if you prefer to get a look at example.
 Last step is to add your Firebase API key to [HyperTrack dashboard](https://dashboard.hypertrack.com/setup) under *Server to Device communication* section.
 
-### Step 3. Initialize SDK
+#### Step 3. Initialize SDK
 Retrieve sdk instance, when you wish to use SDK, by passing your [publishable key]().
 ```java
     HyperTrack sdkInstance = HyperTrack.getInstance(MyActivity.this, "your-publishable-key-here");
@@ -66,7 +66,7 @@ Retrieve sdk instance, when you wish to use SDK, by passing your [publishable ke
 ```
 Also make sure you've requested permissions somewhere in your app. HyperTrack accesses location and activity data, so exact set of permissions depends on Android version, and you can use `HyperTrack.requestPermissionsIfNecessary()` convenience method to simplify it a bit.
 
-### Step 4. Identify your devices
+#### Step 4. Identify your devices
 
 HyperTrack uses string device identifiers that could be obtained from sdk instance
 ```java
@@ -76,43 +76,29 @@ HyperTrack uses string device identifiers that could be obtained from sdk instan
    val deviceId = sdkInstance.deviceID
 ```
 
-Make sure you've transferred this identifier to your backend as it is required when calling HyperTrack APIs.
+Make sure you've saved this identifier as it is required when calling HyperTrack APIs.
 
-### Step 5. Verify your Integration
+#### Step 5. Verify your Integration
 
 Once you've finished pervious steps you are ready to test your integration.
-Simplest way to start tracking is to create a test trip for device. Once active trip is created, HyperTrack issues push notification (without UI) with a command to start tracking and you'll be able to see your device location. We'll use [HyperTrack public API](https://docs.hypertrack.com/#references-apis-trips-post-trips) and you need to copy your authentication credentials from [Dashboard](https://dashboard.hypertrack.com/setup)
-Use following command to create trip in POSIX shell:
+Simplest way to start tracking is to use [HyperTrack public API](https://docs.hypertrack.com/#references-apis-devices-post-devices-device_id-start) and you need to copy your authentication credentials from [Dashboard](https://dashboard.hypertrack.com/setup), so the start command will look like below:
 ```bash
-curl 'https://v3.api.hypertrack.com/trips/' \
-      --request POST \
-      --user {AccountId}:{SecretKey} \
-      --header 'Content-Type: application/json' \
-      --data-raw '{
-          "device_id": "{device_id}",
-          "metadata": {"name": "My First Trip"}
-      }'
+curl https://v3.api.hypertrack.com/devices/{deviceId}/start \
+    --request POST \
+    --user {AccountId}:{SecretKey} \
 ```
 
-Once the command above is done, you'll be able to see your device location either on dashboard or using `embed_url` trip property, that you've received in response.
-![elvis-on-trip-to-paradise](https://user-images.githubusercontent.com/10487613/69039721-26c05d80-09f5-11ea-8047-2be04607dbb4.png)
+Once the command above is done, you'll see tracking notification on device and will be able to see its location on dashboard.
+
 When you're done you can finish the trip using following bash command:
 ```bash
-curl -X POST \
-  -u {AccountId}:{SecretKey} \
-  https://v3.api.hypertrack.com/trips/{trip_id}/complete
-```
-where `{trip_id}` is from response to command when you've created it (it is also part of `embed_url`). Trip completion is asynchronous, and once finished, you'll notice that tracking notification will disappear from your phone.
-
-HyperTrack sdkInstance = HyperTrack.getInstance(context, publishableKey);
-sdkInstance.completeTrip(shareableTrip.getTripId(), completionResultHandler);
+curl https://v3.api.hypertrack.com/devices/{deviceId}/stop \
+    --request POST \
+    --user {AccountId}:{SecretKey} \
 ```
 
-After the trip has ended, you can access its aggregate data (entire route, time, etc.). You can review the trip using the replay feature in the web view mentioned above.
 
-![trip-replay](https://user-images.githubusercontent.com/10487613/69040653-d1854b80-09f6-11ea-9fc3-4930d68667b1.gif)
 
-Although you can use client-side trips management, someone might prefer to control them from backend. Check out [API Reference](https://docs.hypertrack.com/#references-apis-trips-post-trips) for request syntax and examples.
 
 ###### Create trip marker
 Use this optional method if you want to associate data with specific place in your trip. E.g. user marking a task as done, user tapping a button to share location, user accepting an assigned job, device entering a geofence, etc.
