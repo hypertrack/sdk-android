@@ -143,19 +143,19 @@ You can now run the app and start using HyperTrack. You can see your devices on 
 Also you can find more about SDK integration [here](https://github.com/hypertrack/live-app-android).
 
 ## Frequently Asked Questions
-<details><summary><b>What API levels (Android versions) are supported</b></summary>
+<details><summary><b id="faq-supported-api-levels">What API levels (Android versions) are supported</b></summary>
 Currently we do support all of the Android versions starting from API 19 (Android 4.4 Kit Kat).
 <p/>
 </details>
 
-<details><summary><b>NoClassDefFoundError</b></summary>
+<details><summary><b id="faq-no-class-def-found">NoClassDefFoundError</b></summary>
 
 I've added SDK and my app started failing with message like `Fatal Exception: java.lang.NoClassDefFoundError`.
 The reason of it, is that on Android API level 19 and below you cannot have more than 65536 methods in your app (including libraries methods). Please, check [this Stackoverflow](https://stackoverflow.com/questions/34997835/fatal-exception-java-lang-noclassdeffounderror-when-calling-static-method-in-an) answer for solutions.
 <p/>
 </details>
 
-<details><summary><b>Dependencies Conflicts</b></summary>
+<details><summary><b id="faq-dependencies-conflict">Dependencies Conflicts</b></summary>
 SDK dependencies graph looks like below:
 
 ````
@@ -206,7 +206,7 @@ That will take precedence over SDK version and you'll have one version of suppor
 <p/>
 </details>
 
-<details><summary><b>Persistent notification</b></summary>
+<details><summary><b id="faq-persistent-notification">Persistent notification</b></summary>
 
 HyperTrack SDK, by default, runs as a foreground service. This is to ensure that the location tracking works reliably even when your app is minimized. A foreground service is a service that the user is actively aware of and isn't a candidate for the system to kill when low on memory.
 Android mandates that a foreground service provides a persistent notification in the status bar. This means that the notification cannot be dismissed by the user.
@@ -215,7 +215,7 @@ Android mandates that a foreground service provides a persistent notification in
 <p/>
 </details>
 
-<details><summary><b>Handling custom ROMs</b></summary>
+<details><summary><b id="faq-handling-custom-roms">Handling custom ROMs</b></summary>
 
 Smartphones are getting more and more powerful, but the battery capacity is lagging behind. Device manufactures are always trying to squeeze some battery saving features into the firmware with each new Android release. Manufactures like Xiaomi, Huawei and OnePlus have their own battery savers that kills the services running in the background.
 To avoid OS killing the service, users of your app need to override the automatic battery management and set it manual. To inform your users and direct them to the right setting page, you may add the following code in your app. This would intent out your user to the right settings page on the device.
@@ -252,19 +252,19 @@ Some manufacturers don't allow to whitelist apps programmatically. In that case 
 <p/>
 </details>
 
-<details><summary><b>HyperTrack notification shows even after app is terminated</b></summary>
+<details><summary><b id="faq-persistent-notification">HyperTrack notification shows even after app is terminated</b></summary>
 
 The HyperTrack service runs as a separate component and it is still running when the app that started it is terminated. That is why you can observe that notification. When you tracking is stopped, the notification goes away.
 <p/>
 </details>
 
-<details><summary><b>How tracking works in Doze mode</b></summary>
+<details><summary><b id="faq-doze-mode">How tracking works in Doze mode</b></summary>
 
 Doze mode requires device [to be stationary](https://developer.android.com/training/monitoring-device-state/doze-standby.html#understand_doze), so before OS starts imposing power management restrictions, exact device location is obtained. When device starts moving, Android leaves Doze mode and works regularly, so no special handling of Doze mode required with respect to location tracking.
 <p/>
 </details>
 
-<details><summary><b>AAPT: error: attribute android:foregroundServiceType not found</b></summary>
+<details><summary><b id="faq-aapt-error-foreground-service-type">AAPT: error: attribute android:foregroundServiceType not found</b></summary>
 
 If build fails with error like `AAPT: error: attribute android:foregroundServiceType not found` that means that you're targeting your app for Android P or earlier. Starting from Android 10 Google imposes additional restrictions on services, that access location data while phone screen is turned off. Possible workaround here is to remove declared service property by adding following element to your app's manifest
 ```xml
