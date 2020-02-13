@@ -61,7 +61,7 @@ Last step is to add your Firebase API key to [HyperTrack dashboard](https://dash
 #### Step 3. Initialize SDK
 Retrieve sdk instance, when you wish to use SDK, by passing your [publishable key]().
 ```java
-    HyperTrack sdkInstance = HyperTrack.getInstance(MyActivity.this, "your-publishable-key-here");
+  HyperTrack sdkInstance = HyperTrack.getInstance(MyActivity.this, "your-publishable-key-here");
 ```
 ```kotlin
   val sdkInstance = HyperTrack.getInstance(this, "your-publishable-key-here")
