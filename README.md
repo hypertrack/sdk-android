@@ -102,6 +102,26 @@ curl https://v3.api.hypertrack.com/devices/{deviceId}/stop \
 
 
 ## Advanced integration
+
+###### Turn tracking on and off
+Depending on your needs, you can always _stop_ and _start_ tracking, invoking [`.stop()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/HyperTrack.html#stop--) and [`start()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/HyperTrack.html#start--) SDK methods.
+It is recommended to store reference to SDK instance in order to use it for further actions. You can determine current sdk state using [`isRunning()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/HyperTrack.html#isRunning--) call.
+
+###### Add SDK state listener to catch events.
+You can subscribe to SDK status changes [`addTrackingListener`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/HyperTrack.html#addTrackingListener-com.hypertrack.sdk.TrackingStateObserver.OnTrackingStateChangeListener-) and handle them in the appropriate methods [`onError(TrackingError)`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onError-com.hypertrack.sdk.TrackingError-) [`onTrackingStart()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onTrackingStart--) [`onTrackingStop()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onTrackingStop--)
+
+###### Customize foreground service notification
+HyperTrack tracking runs as a separate foreground service, so when it is running, your users will see a persistent notification. By default, it displays your app icon with text `{app name} is running` but you can customize it anytime after initialization by calling:
+```java
+HyperTrack sdkInstance = HyperTrack.getInstance(context, publishableKey);
+sdkInstance.setTrackingNotificationConfig(
+                new ServiceNotificationConfig.Builder()
+                        .setContentTitle("Tap to stop tracking")
+                        .build()
+        );
+```
+Check out other configurable properties in [ServiceNotificationConfig reference](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/ServiceNotificationConfig.html)
+
 ###### Create trip marker
 Use this optional method if you want to associate data with specific place in your trip. E.g. user marking a task as done, user tapping a button to share location, user accepting an assigned job, device entering a geofence, etc.
 ```java
@@ -115,27 +135,7 @@ order.put("price", 7.75);
 sdkInstance.addTripMarker(order);
 ```
 
-Look into [documentation](https://hypertrack.github.io/sdk-android-hidden/javadoc/3.8.3/com/hypertrack/sdk/HyperTrack.html) for more details.
-
-#### Step 3. _(optional)_ Utility Methods
-###### Turn tracking on and off
-Depending on your needs, you can always _stop_ and _start_ tracking, invoking [`.stop()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/3.8.3/com/hypertrack/sdk/HyperTrack.html#stop--) and [`start()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/3.8.3/com/hypertrack/sdk/HyperTrack.html#start--) SDK methods.
-It is recommended to store reference to SDK instance in order to use it for further actions. You can determine current sdk state using [`isRunning()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/3.8.3/com/hypertrack/sdk/HyperTrack.html#isRunning--) call.
-
-###### Add SDK state listener to catch events.
-You can subscribe to SDK status changes [`addTrackingListener`](https://hypertrack.github.io/sdk-android-hidden/javadoc/3.8.3/com/hypertrack/sdk/HyperTrack.html#addTrackingListener-com.hypertrack.sdk.TrackingStateObserver.OnTrackingStateChangeListener-) and handle them in the appropriate methods [`onError(TrackingError)`](https://hypertrack.github.io/sdk-android-hidden/javadoc/3.8.3/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onError-com.hypertrack.sdk.TrackingError-) [`onTrackingStart()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/3.8.3/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onTrackingStart--) [`onTrackingStop()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/3.8.3/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onTrackingStop--)
-
-###### Customize foreground service notification
-HyperTrack tracking runs as a separate foreground service, so when it is running, your users will see a persistent notification. By default, it displays your app icon with text `{app name} is running` but you can customize it anytime after initialization by calling:
-```java
-HyperTrack sdkInstance = HyperTrack.getInstance(context, publishableKey);
-sdkInstance.setTrackingNotificationConfig(
-                new ServiceNotificationConfig.Builder()
-                        .setContentTitle("Tap to stop tracking")
-                        .build()
-        );
-```
-Check out other configurable properties in [ServiceNotificationConfig reference](https://hypertrack.github.io/sdk-android-hidden/javadoc/3.8.3/com/hypertrack/sdk/ServiceNotificationConfig.html)
+Look into [documentation](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/HyperTrack.html) for more details.
 
 #### You are all set
 
