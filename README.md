@@ -3,7 +3,7 @@
 [HyperTrack](https://www.hypertrack.com) lets you add live location tracking to your mobile app. This document contains a step by step guide how to make it work.
 
 ## Publishable Key
-We use Publishable Key to identify your devices. To get one:
+We use a Publishable Key to identify your devices. Please follow these steps below to get your Publishable Key:
 
  - Go to the [Signup page](https://dashboard.hypertrack.com/signup) to create and verify your HyperTrack account
  - Open the [Setup page](https://dashboard.hypertrack.com/setup) to copy your Publishable Key
@@ -30,7 +30,7 @@ dependencies {
 #### Step 2. Enable server to device communication.
 Server to device communication uses Firebase push notifications as transport for commands, so for remote tracking state management Firebase integration is required. If you do not yet have push notifications enabled, please proceed to [setup Firebase Cloud Messaging](https://firebase.google.com/docs/android/setup). 
 
-Next step is to specify `HyperTrackMessagingService` as push messages receiver by adding following snippet to your apps Android manifest:
+Next step is to specify `HyperTrackMessagingService` as push messages receiver by adding the following snippet to your app's Android manifest:
 ```xml
 ...
   <service android:name="com.hypertrack.sdk.HyperTrackMessagingService" android:exported="false">
@@ -40,23 +40,24 @@ Next step is to specify `HyperTrackMessagingService` as push messages receiver b
   </service>
 </application>
 ```
-If you already use firebase push notifications you can extend `HyperTrackMessagingService` instead of Firebase, or declare two receivers side by side, if you wish (don't forget to call `super.onNewToken` and `super.onMessageReceived` in that case).
-Check out [Quickstart app](https://github.com/hypertrack/quickstart-android/) if you prefer to get a look at example.
-Last step is to add your Firebase API key to [HyperTrack dashboard](https://dashboard.hypertrack.com/setup) under *Server to Device communication* section.
+If you already use Firebase push notifications you can extend `HyperTrackMessagingService` instead of Firebase, or declare two receivers side by side, if you wish (don't forget to call `super.onNewToken` and `super.onMessageReceived` in that case).
+Check out [Quickstart app](https://github.com/hypertrack/quickstart-android/) if you prefer to see an example.
+
+The last step is to add your Firebase API key to [HyperTrack dashboard](https://dashboard.hypertrack.com/setup) under *Server to Device communication* section.
 
 #### Step 3. Initialize SDK
-Retrieve sdk instance, when you wish to use SDK, by passing your [publishable key]().
+Obtain an SDK instance, when you wish to use SDK, by passing your Publishable Key.
 ```java
   HyperTrack sdkInstance = HyperTrack.getInstance(MyActivity.this, "your-publishable-key-here");
 ```
 ```kotlin
   val sdkInstance = HyperTrack.getInstance(this, "your-publishable-key-here")
 ```
-Also make sure you've requested permissions somewhere in your app. HyperTrack accesses location and activity data, so exact set of permissions depends on Android version, and you can use `HyperTrack.requestPermissionsIfNecessary()` convenience method to simplify it a bit.
+Also make sure you've requested permissions somewhere in your app. HyperTrack accesses location and activity data, so exact set of permissions depends on an Android version. You may use `HyperTrack.requestPermissionsIfNecessary()` convenience method to request permissions and make SDK integration simpler.
 
 #### Step 4. Identify your devices
 
-HyperTrack uses string device identifiers that could be obtained from sdk instance
+HyperTrack uses string device identifiers that could be obtained from the SDK instance
 ```java
    String deviceId = sdkInstance.getDeviceID();
 ```
@@ -64,12 +65,13 @@ HyperTrack uses string device identifiers that could be obtained from sdk instan
    val deviceId = sdkInstance.deviceID
 ```
 
-Make sure you've saved this identifier as it is required when calling HyperTrack APIs.
+Make sure you've saved this device identifier as it is required when calling HyperTrack APIs.
 
-#### Step 5. Verify your Integration
+#### Step 5. Verify your integration
 
 Once you've finished pervious steps you are ready to test your integration.
-Simplest way to start tracking is to use [HyperTrack public API](https://docs.hypertrack.com/#references-apis-devices-post-devices-device_id-start) and you need to copy your authentication credentials from [Dashboard](https://dashboard.hypertrack.com/setup), so the start command will look like below:
+
+Simplest way to start tracking is to use [HyperTrack API](https://docs.hypertrack.com/#references-apis-devices-post-devices-device_id-start) and you need to copy your authentication credentials from [Dashboard](https://dashboard.hypertrack.com/setup), so the start command will look like below:
 ```bash
 curl https://v3.api.hypertrack.com/devices/{deviceId}/start \
     --request POST \
@@ -84,8 +86,6 @@ curl https://v3.api.hypertrack.com/devices/{deviceId}/stop \
     --request POST \
     --user {AccountId}:{SecretKey} \
 ```
-
-
 
 ## Advanced integration
 
