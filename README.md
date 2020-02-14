@@ -1,12 +1,14 @@
 
 # HyperTrack Android SDK Integration Guide
-[HyperTrack](https://www.hypertrack.com) lets you add live location tracking to your mobile app. This document contains a step by step guide how to make it work.
 
-## Publishable Key
-We use a Publishable Key to identify your devices. Please follow these steps below to get your Publishable Key:
+[HyperTrack](https://www.hypertrack.com) lets you add live location tracking to your mobile app.
+Live location is made available along with ongoing activity, tracking controls and tracking outage with reasons.
+This document contains a step by step guide how to integrate HyperTrack SDK with your app.
 
- - Go to the [Signup page](https://dashboard.hypertrack.com/signup) to create and verify your HyperTrack account
- - Open the [Setup page](https://dashboard.hypertrack.com/setup) to copy your Publishable Key
+## Create HyperTrack Account
+
+[Sign up](https://dashboard.hypertrack.com/signup) for HyperTrack and 
+get your publishable key from the [Setup page](https://dashboard.hypertrack.com/setup).
 
 ### Add Hypertrack SDK
 Add following lines to your applications `build.gradle`:
@@ -46,7 +48,7 @@ Check out [Quickstart app](https://github.com/hypertrack/quickstart-android/) if
 The last step is to add your Firebase API key to [HyperTrack dashboard](https://dashboard.hypertrack.com/setup) under *Server to Device communication* section.
 
 ### Initialize SDK
-Obtain an SDK instance, when you wish to use SDK, by passing your Publishable Key.
+Obtain an SDK instance, when you wish to use SDK, by passing your publishable key.
 ```java
   HyperTrack sdkInstance = HyperTrack.getInstance(MyActivity.this, "your-publishable-key-here");
 ```
