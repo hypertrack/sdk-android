@@ -1,28 +1,12 @@
 
 # HyperTrack Android SDK Integration Guide
-
-[HyperTrack](https://www.hypertrack.com) lets you add live location tracking to your mobile app. This doc contains an step by step guide how to make it works.
-
-* [Publishable Key](#publishable-key) – Get your Publishable Key
-* [Basic integration](#basic-integration) – Basic Integration
-* [Advanced integration](#advanced-integration) – When Basic is not enough
-* [FAQs](#frequently-asked-questions) – Frequently asked questions
+[HyperTrack](https://www.hypertrack.com) lets you add live location tracking to your mobile app. This document contains a step by step guide how to make it work.
 
 ## Publishable Key
-
 We use Publishable Key to identify your devices. To get one:
-1. Go to the [Signup page](https://dashboard.hypertrack.com/signup). Enter your email address and password.
-2. Open the verification link sent to your email.
-3. Open the [Setup page](https://dashboard.hypertrack.com/setup), where you can copy your Publishable Key.
 
-
-## Basic integration
-
- - [Add Hypertrack SDK](#step-1-add-hypertrack-sdk)
- - [Enable server to device communication](#step-2-enable-server-to-device-communication)
- - [Initialize SDK](#step-3-initialize-sdk)
- - [Identify your device](#step-4-identify-your-devices)
- - [Verify integration](#step-5-verify-your-integration)
+ - Go to the [Signup page](https://dashboard.hypertrack.com/signup) to create and verify your HyperTrack account
+ - Open the [Setup page](https://dashboard.hypertrack.com/setup) to copy your Publishable Key
 
 #### Step 1. Add Hypertrack SDK
 Add following lines to your applications `build.gradle`:
@@ -44,7 +28,9 @@ dependencies {
 ```
 
 #### Step 2. Enable server to device communication.
-Server to device communication uses firebase push notifications as transport for commands, so for remote tracking state management Firebase integration is required. So you need to [setup Firebase Cloud Messaging](https://firebase.google.com/docs/android/setup), if you have no push notifications enabled so far. Next step is to specify `HyperTrackMessagingService` as push messages receiver by adding following snippet to your apps Android manifest:
+Server to device communication uses Firebase push notifications as transport for commands, so for remote tracking state management Firebase integration is required. If you do not yet have push notifications enabled, please proceed to [setup Firebase Cloud Messaging](https://firebase.google.com/docs/android/setup). 
+
+Next step is to specify `HyperTrackMessagingService` as push messages receiver by adding following snippet to your apps Android manifest:
 ```xml
 ...
   <service android:name="com.hypertrack.sdk.HyperTrackMessagingService" android:exported="false">
