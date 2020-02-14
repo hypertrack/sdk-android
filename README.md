@@ -3,7 +3,7 @@
 
 [HyperTrack](https://www.hypertrack.com) lets you add live location tracking to your mobile app.
 Live location is made available along with ongoing activity, tracking controls and tracking outage with reasons.
-This document contains a step by step guide how to integrate HyperTrack SDK with your app.
+This document contains a step by step guide how to integrate HyperTrack SDK with your app within minutes.
 
 ## Create HyperTrack Account
 
