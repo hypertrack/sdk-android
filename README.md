@@ -24,7 +24,7 @@ repositories {
 
 //Add HyperTrack as a dependency
 dependencies {
-    implementation 'com.hypertrack:hypertrack:4.0.0-SNAPSHOT'
+    implementation 'com.hypertrack:hypertrack:4.0.0'
     ...
 }
 ```
@@ -46,6 +46,8 @@ If you already use Firebase push notifications you can extend `HyperTrackMessagi
 Check out [Quickstart app](https://github.com/hypertrack/quickstart-android/) if you prefer to see an example.
 
 The last step is to add your Firebase API key to [HyperTrack dashboard](https://dashboard.hypertrack.com/setup) under *Server to Device communication* section.
+
+<aside> Push notifications have delays so if you're looking for more instant channel you can use <a href="https://hypertrack.github.io/sdk-android-hidden/javadoc/latest/com/hypertrack/sdk/HyperTrack.html#syncDeviceSettings--"><code>syncDeviceSettings</code></a> sdk method to speed up command propagatioon.</aside>
 
 ### Initialize SDK
 Obtain an SDK instance, when you wish to use SDK, by passing your publishable key.
@@ -221,41 +223,57 @@ The reason of it, is that on Android API level 19 and below you cannot have more
 SDK dependencies graph looks like below:
 
 ````
-+--- com.android.volley:volley:1.1.0<br/>
-+--- com.google.code.gson:gson:2.8.5<br/>
-+--- org.greenrobot:eventbus:3.1.1<br/>
-+--- com.parse.bolts:bolts-tasks:1.4.0<br/>
-+--- net.grandcentrix.tray:tray:0.12.0<br/>
-|    \--- com.android.support:support-annotations:23.0.1 -> 28.0.0<br/>
-+--- com.google.android.gms:play-services-location:16.0.0<br/>
-|    +--- com.google.android.gms:play-services-base:16.0.1<br/>
-|    |    +--- com.google.android.gms:play-services-basement:16.0.1<br/>
-|    |    |    \--- com.android.support:support-v4:26.1.0<br/>
-|    |    |         +--- com.android.support:support-compat:26.1.0<br/>
-|    |    |         |    +--- com.android.support:support-annotations:26.1.0 -> 28.0.0<br/>
-|    |    |         |    \--- android.arch.lifecycle:runtime:1.0.0<br/>
-|    |    |         |         +--- android.arch.lifecycle:common:1.0.0<br/>
-|    |    |         |         \--- android.arch.core:common:1.0.0<br/>
-|    |    |         +--- com.android.support:support-media-compat:26.1.0<br/>
-|    |    |         |    +--- com.android.support:support-annotations:26.1.0 -> 28.0.0<br/>
-|    |    |         |    \--- com.android.support:support-compat:26.1.0 (*)<br/>
-|    |    |         +--- com.android.support:support-core-utils:26.1.0<br/>
-|    |    |         |    +--- com.android.support:support-annotations:26.1.0 -> 28.0.0<br/>
-|    |    |         |    \--- com.android.support:support-compat:26.1.0 (*)<br/>
-|    |    |         +--- com.android.support:support-core-ui:26.1.0<br/>
-|    |    |         |    +--- com.android.support:support-annotations:26.1.0 -> 28.0.0<br/>
-|    |    |         |    \--- com.android.support:support-compat:26.1.0 (*)<br/>
-|    |    |         \--- com.android.support:support-fragment:26.1.0<br/>
-|    |    |              +--- com.android.support:support-compat:26.1.0 (*)<br/>
-|    |    |              +--- com.android.support:support-core-ui:26.1.0 (*)<br/>
-|    |    |              \--- com.android.support:support-core-utils:26.1.0 (*)<br/>
-|    |    \--- com.google.android.gms:play-services-tasks:16.0.1<br/>
-|    |         \--- com.google.android.gms:play-services-basement:16.0.1 (*)<br/>
-|    +--- com.google.android.gms:play-services-basement:16.0.1 (*)<br/>
-|    +--- com.google.android.gms:play-services-places-placereport:16.0.0<br/>
-|    |    \--- com.google.android.gms:play-services-basement:16.0.1 (*)<br/>
-|    \--- com.google.android.gms:play-services-tasks:16.0.1 (*)<br/>
-\--- com.android.support:support-annotations:28.0.0<br/>
++--- com.android.volley:volley:1.1.1
++--- com.google.code.gson:gson:2.8.6
++--- org.greenrobot:eventbus:3.1.1
++--- com.parse.bolts:bolts-tasks:1.4.0
++--- net.grandcentrix.tray:tray:0.12.0
++--- com.google.android.gms:play-services-location:15.0.1
+|    +--- com.google.android.gms:play-services-base:[15.0.1,16.0.0) -> 15.0.1
+|    |    +--- com.google.android.gms:play-services-basement:[15.0.1] -> 15.0.1
+|    |    |    \--- com.android.support:support-v4:26.1.0
+|    |    |         +--- com.android.support:support-compat:26.1.0
+|    |    |         |    +--- com.android.support:support-annotations:26.1.0
+|    |    |         |    \--- android.arch.lifecycle:runtime:1.0.0
+|    |    |         |         +--- android.arch.lifecycle:common:1.0.0
+|    |    |         |         \--- android.arch.core:common:1.0.0
+|    |    |         +--- com.android.support:support-media-compat:26.1.0
+|    |    |         |    +--- com.android.support:support-annotations:26.1.0
+|    |    |         |    \--- com.android.support:support-compat:26.1.0 (*)
+|    |    |         +--- com.android.support:support-core-utils:26.1.0
+|    |    |         |    +--- com.android.support:support-annotations:26.1.0
+|    |    |         |    \--- com.android.support:support-compat:26.1.0 (*)
+|    |    |         +--- com.android.support:support-core-ui:26.1.0
+|    |    |         |    +--- com.android.support:support-annotations:26.1.0
+|    |    |         |    \--- com.android.support:support-compat:26.1.0 (*)
+|    |    |         \--- com.android.support:support-fragment:26.1.0
+|    |    |              +--- com.android.support:support-compat:26.1.0 (*)
+|    |    |              +--- com.android.support:support-core-ui:26.1.0 (*)
+|    |    |              \--- com.android.support:support-core-utils:26.1.0 (*)
+|    |    \--- com.google.android.gms:play-services-tasks:[15.0.1] -> 15.0.1
+|    |         \--- com.google.android.gms:play-services-basement:[15.0.1] -> 15.0.1 (*)
+|    +--- com.google.android.gms:play-services-basement:[15.0.1,16.0.0) -> 15.0.1 (*)
+|    +--- com.google.android.gms:play-services-places-placereport:[15.0.1,16.0.0) -> 15.0.1
+|    |    \--- com.google.android.gms:play-services-basement:[15.0.1,16.0.0) -> 15.0.1 (*)
+|    \--- com.google.android.gms:play-services-tasks:[15.0.1,16.0.0) -> 15.0.1 (*)
++--- com.android.support:support-annotations:26.1.0
++--- com.google.firebase:firebase-messaging:17.1.0
+|    +--- com.google.android.gms:play-services-basement:15.0.1 (*)
+|    +--- com.google.android.gms:play-services-tasks:15.0.1 (*)
+|    +--- com.google.firebase:firebase-common:16.0.0
+|    |    +--- com.google.android.gms:play-services-basement:15.0.1 (*)
+|    |    \--- com.google.android.gms:play-services-tasks:15.0.1 (*)
+|    +--- com.google.firebase:firebase-iid:[16.2.0] -> 16.2.0
+|    |    +--- com.google.android.gms:play-services-basement:15.0.1 (*)
+|    |    +--- com.google.android.gms:play-services-stats:15.0.1
+|    |    |    \--- com.google.android.gms:play-services-basement:[15.0.1] -> 15.0.1 (*)
+|    |    +--- com.google.android.gms:play-services-tasks:15.0.1 (*)
+|    |    +--- com.google.firebase:firebase-common:16.0.0 (*)
+|    |    \--- com.google.firebase:firebase-iid-interop:16.0.0
+|    |         +--- com.google.android.gms:play-services-base:15.0.1 (*)
+|    |         \--- com.google.android.gms:play-services-basement:15.0.1 (*)
+|    \--- com.google.firebase:firebase-measurement-connector:16.0.0
+|         \--- com.google.android.gms:play-services-basement:15.0.1 (*)
 ````
 
 Common problem here is depending on different versions of `com.android.support` library components. You can explicitly specify required version by adding it as a dependency in your app's `build.gradle`, e.g.:
@@ -263,6 +281,12 @@ Common problem here is depending on different versions of `com.android.support` 
 ````groovy
 implementation `com.android.support:support-v4:28.0.0`
 ````
+
+and explicitly force SDK pick app's dependencies
+
+```
+implementation("com.hypertrack:hypertrack:4.0.0") {transitive = false}
+```
 
 That will take precedence over SDK version and you'll have one version of support library on your classpath.
 <p/>
