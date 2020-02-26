@@ -47,6 +47,8 @@ Check out [Quickstart app](https://github.com/hypertrack/quickstart-android/) if
 
 The last step is to add your Firebase API key to [HyperTrack dashboard](https://dashboard.hypertrack.com/setup) under *Server to Device communication* section.
 
+<aside> Push notifications have delays so if you're looking for more instant channel you can use <a href="https://hypertrack.github.io/sdk-android-hidden/javadoc/latest/com/hypertrack/sdk/HyperTrack.html#syncDeviceSettings--"><code>syncDeviceSettings</code> sdk method to speed up command propagatioon.</aside>
+
 ### Initialize SDK
 Obtain an SDK instance, when you wish to use SDK, by passing your publishable key.
 ```java
