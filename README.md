@@ -7,7 +7,7 @@ This document contains a step by step guide how to integrate HyperTrack SDK with
 
 ## Create HyperTrack Account
 
-[Sign up](https://dashboard.hypertrack.com/signup) for HyperTrack and 
+[Sign up](https://dashboard.hypertrack.com/signup) for HyperTrack and
 get your publishable key from the [Setup page](https://dashboard.hypertrack.com/setup).
 
 ### Add Hypertrack SDK
@@ -24,13 +24,13 @@ repositories {
 
 //Add HyperTrack as a dependency
 dependencies {
-    implementation 'com.hypertrack:hypertrack:4.0.0'
+    implementation 'com.hypertrack:hypertrack:4.1.0'
     ...
 }
 ```
 ### Set up silent push notifications
 
-Set up silent push notifications to manage on-device tracking using HyperTrack cloud APIs from your server. This requires Firebase push notification. If you do not yet have push notifications enabled, please proceed to [setup Firebase Cloud Messaging](https://firebase.google.com/docs/android/setup). 
+Set up silent push notifications to manage on-device tracking using HyperTrack cloud APIs from your server. This requires Firebase push notification. If you do not yet have push notifications enabled, please proceed to [setup Firebase Cloud Messaging](https://firebase.google.com/docs/android/setup).
 
 Next step is to specify `HyperTrackMessagingService` as push messages receiver by adding the following snippet to your app's Android manifest:
 ```xml
@@ -80,7 +80,7 @@ to control device tracking from your backend.
 
 ### Track devices during work
 
-Track devices when user is logged in to work, or during work hours by calling the 
+Track devices when user is logged in to work, or during work hours by calling the
 [Devices API](https://docs.hypertrack.com/#references-apis-devices).
 
 To start, call the [start](https://docs.hypertrack.com/?shell#references-apis-devices-post-devices-device_id-start) API.
@@ -120,8 +120,8 @@ and add destination.
 HyperTrack Trips API offers extra fields to get additional intelligence over the Devices API.
 * set destination to track route and ETA
 * set scheduled_at to track delays
-* share live tracking URL of the trip with customers 
-* embed live tracking view of the trip in your ops dashboard 
+* share live tracking URL of the trip with customers
+* embed live tracking view of the trip in your ops dashboard
 
 ```curl
 curl -u {AccountId}:{SecretKey} --location --request POST 'https://v3.api.hypertrack.com/trips/' \
@@ -172,7 +172,7 @@ Once your app is running, go to the [dashboard](https://dashboard.hypertrack.com
 ## Advanced integration
 
 ###### Add SDK state listener to catch events.
-You can subscribe to SDK status changes [`addTrackingListener`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/HyperTrack.html#addTrackingListener-com.hypertrack.sdk.TrackingStateObserver.OnTrackingStateChangeListener-) and handle them in the appropriate methods [`onError(TrackingError)`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onError-com.hypertrack.sdk.TrackingError-) [`onTrackingStart()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onTrackingStart--) [`onTrackingStop()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onTrackingStop--)
+You can subscribe to SDK status changes [`addTrackingListener`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.1.0/com/hypertrack/sdk/HyperTrack.html#addTrackingListener-com.hypertrack.sdk.TrackingStateObserver.OnTrackingStateChangeListener-) and handle them in the appropriate methods [`onError(TrackingError)`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.1.0/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onError-com.hypertrack.sdk.TrackingError-) [`onTrackingStart()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.1.0/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onTrackingStart--) [`onTrackingStop()`](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.1.0/com/hypertrack/sdk/TrackingStateObserver.OnTrackingStateChangeListener.html#onTrackingStop--)
 
 ###### Customize foreground service notification
 HyperTrack tracking runs as a separate foreground service, so when it is running, your users will see a persistent notification. By default, it displays your app icon with text `{app name} is running` but you can customize it anytime after initialization by calling:
@@ -184,7 +184,7 @@ sdkInstance.setTrackingNotificationConfig(
                         .build()
         );
 ```
-Check out other configurable properties in [ServiceNotificationConfig reference](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/ServiceNotificationConfig.html)
+Check out other configurable properties in [ServiceNotificationConfig reference](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.1.0/com/hypertrack/sdk/ServiceNotificationConfig.html)
 
 ###### Create trip marker
 Use this optional method if you want to associate data with specific place in your trip. E.g. user marking a task as done, user tapping a button to share location, user accepting an assigned job, device entering a geofence, etc.
@@ -199,7 +199,7 @@ order.put("price", 7.75);
 sdkInstance.addTripMarker(order);
 ```
 
-Look into [documentation](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.0.0-SNAPSHOT/com/hypertrack/sdk/HyperTrack.html) for more details.
+Look into [documentation](https://hypertrack.github.io/sdk-android-hidden/javadoc/4.1.0/com/hypertrack/sdk/HyperTrack.html) for more details.
 
 #### You are all set
 
@@ -285,7 +285,7 @@ implementation `com.android.support:support-v4:28.0.0`
 and explicitly force SDK pick app's dependencies
 
 ```
-implementation("com.hypertrack:hypertrack:4.0.0") {transitive = false}
+implementation("com.hypertrack:hypertrack:4.1.0") {transitive = false}
 ```
 
 That will take precedence over SDK version and you'll have one version of support library on your classpath.
