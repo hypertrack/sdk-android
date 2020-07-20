@@ -1,4 +1,9 @@
 ## [Unreleased]
+ 
+## [4.5.1] - 2020-07-20
+### Changed
+- Device name and metadata changes are propagated to platform immediately.
+- Missing permission error is only reported on tracking start.
 
 ## [4.5.0] - 2020-07-13
 ### Added
