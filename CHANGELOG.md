@@ -1,4 +1,9 @@
 ## [Unreleased]
+
+ 
+## [4.5.2] - 2020-07-24
+### Changed
+- Stability: switched from Parceable serialization to avoid deserialization issues on reboot.
  
 ## [4.5.1] - 2020-07-20
 ### Changed
