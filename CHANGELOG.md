@@ -1,5 +1,11 @@
+# Changelog
+
 ## [Unreleased]
 
+
+## [4.5.3] - 2020-07-27
+### Fixed
+- Bug that blocked metadata propagation from device to platform on Android 4.4 (API 19).
  
 ## [4.5.2] - 2020-07-24
 ### Changed
