@@ -2,6 +2,17 @@
 
 ## [Unreleased]
 
+## [4.6.0] - 2020-09-25
+### Added
+- Automatic sync on internal triggers (sdk init, publishable key set etc).
+- SDK dynamic configuration from remote.
+### Fixed
+- Steps counter reporting total instead of increment
+- Invalid locations client-side check
+
+## [4.5.4] - 2020-09-21
+### Fixed
+- Fixed a database migration bug that could result in inability of creating geotags
 
 ## [4.5.3] - 2020-07-27
 ### Fixed
