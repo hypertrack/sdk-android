@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+## [4.7.0] - 2020-10-16
+### Added
+- Android 11 compartibility: SDK will ask for background location access permission on Android 11
+and correctly detect location access restrictions, that caused by new permission policy.
+### Fixed
+- Fixed a bug when SDK had delay in increasing locations frequency after stops.
+- Removed default large icon in tracking notification as per Material Design Guidelines
+- Small icon is now also configurable through overridden resources.
+Vector drawable with name `ic_hypertrack_notification` will be used as a default small notifiation icon.
+
 ## [4.6.0] - 2020-09-25
 ### Added
 - Automatic sync on internal triggers (sdk init, publishable key set etc).
