@@ -4,7 +4,7 @@
 
 ## [4.8.0] - 2020-10-30
 ### Fixed
-- Backend and local tracking state conflict fix via their timestampts comparison.
+- Backend and local tracking state conflict fix via their timestamps comparison.
 - Sparse locations after exits from stops are no longer appears.
 
 ## [4.7.0] - 2020-10-16
