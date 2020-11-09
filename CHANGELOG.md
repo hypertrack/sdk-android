@@ -1,7 +1,5 @@
 # Changelog
 
-## [Unreleased]
-
 ## [4.8.0] - 2020-10-30
 ### Fixed
 - Backend and local tracking state conflict fix via their timestamps comparison.
