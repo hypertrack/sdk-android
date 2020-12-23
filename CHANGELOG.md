@@ -2,7 +2,7 @@
 
 ## [4.9.0] - 2020-12-23
 ### Fixed
-- `HypeTrackMessagingService` was removed to avoid requirement of overriding it instead of `FirebaseMessagingservice`.
+- `HypeTrackMessagingService` was removed to avoid requirement of overriding it instead of `FirebaseMessagingService`.
 
 ## [4.8.0] - 2020-10-30
 ### Fixed
