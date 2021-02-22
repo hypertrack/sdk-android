@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.10.0] - 2020-02-22
+### Added
+- Dynamic publishable key change support (comes in handy for test/prod switching)
+- Background Location permission was made optional (with a dedicated setter on SDK instance)
+### Fixed
+- Handler based scheduler replaced with coroutines as a workaround to a memory leek in OS APIs
+- Fixed race conditions that could causes involuntary tracking stops
+- Human readable explanation of process exit reason on Android 11
+- Constant device id (was only on Oreo or later before)
+
 ## [4.9.0] - 2020-12-23
 ### Fixed
 - `HypeTrackMessagingService` was removed to avoid requirement of overriding it instead of `FirebaseMessagingService`.
