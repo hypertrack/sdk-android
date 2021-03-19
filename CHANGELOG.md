@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.10.1] - 2020-03-19
+### Fixed
+- Fixed concurrency bug resulted in multiple outages being genrated
+
 ## [4.10.0] - 2020-02-22
 ### Added
 - Dynamic publishable key change support (comes in handy for test/prod switching)
