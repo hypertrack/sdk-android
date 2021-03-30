@@ -1,10 +1,14 @@
 # Changelog
 
-## [4.10.1] - 2020-03-19
+## [4.11.0] - 2021-03-30
+### Added
+- Restricted geotag interface method, that creates geotag when device is within specified region and fails otherwise.
+
+## [4.10.1] - 2021-03-19
 ### Fixed
 - Fixed concurrency bug resulted in multiple outages being genrated
 
-## [4.10.0] - 2020-02-22
+## [4.10.0] - 2021-02-22
 ### Added
 - Dynamic publishable key change support (comes in handy for test/prod switching)
 - Background Location permission was made optional (with a dedicated setter on SDK instance)
