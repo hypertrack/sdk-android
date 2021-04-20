@@ -1,5 +1,10 @@
 # Changelog
 
+## [4.11.1] - 2021-04-20
+### Fixed
+- Bug when SDK didn't inform about GPS signal unavailability, if it was unavailable from the tracking start.
+- Unknown outages won't be reported like restarted by user.
+
 ## [4.11.0] - 2021-03-30
 ### Added
 - Restricted geotag interface method, that creates geotag when device is within specified region and fails otherwise.
