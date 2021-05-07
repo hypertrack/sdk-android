@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.12.0] - 2021-05-07
+### Added
+- Whitelisting hint will appear on devices, that are known to have additional permissions (Huawei, Samsung, Realme etc.). `sdk.requestPermissionsIfNecessary()` or `sdk.start()` trigger that prompt.
+### Fixed
+- HyperTrackSDKService lifecycle improved. `startForeground` is called immediately, without any disk access operations.
+
 ## [4.11.1] - 2021-04-20
 ### Fixed
 - Bug when SDK didn't inform about GPS signal unavailability, if it was unavailable from the tracking start.
