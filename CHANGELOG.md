@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.12.1] - 2021-05-10
+### Fixed
+- Crash on concurrent start from multiple threads was fixed.
+
 ## [4.12.0] - 2021-05-07
 ### Added
 - Whitelisting hint will appear on devices, that are known to have additional permissions (Huawei, Samsung, Realme etc.). `sdk.requestPermissionsIfNecessary()` or `sdk.start()` trigger that prompt.
