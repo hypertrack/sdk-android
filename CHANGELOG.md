@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.12.2] - 2021-05-11
+### Fixed
+- Main thread API contract violation bug fixed.
+
 ## [4.12.1] - 2021-05-10
 ### Fixed
 - Crash on concurrent start from multiple threads was fixed.
