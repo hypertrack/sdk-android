@@ -1,8 +1,10 @@
 # Changelog
 
-## [4.12.2] - 2021-05-11
+## [4.13.0] - 2021-05-19
+### Added
+- Android Strict mode compliance
 ### Fixed
-- Main thread API contract violation bug fixed.
+- Crash that occurred on network response been delivered after app context is invalidated
 
 ## [4.12.1] - 2021-05-10
 ### Fixed
