@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.0.0] - 2021-05-23
+### Added
+- Geotag method returns current device location or the reason, why it can't be retrieved
+### Removed
+- Restricted Geotag method removed
+
 ## [4.13.0] - 2021-05-19
 ### Added
 - Android Strict mode compliance
