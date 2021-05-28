@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.1.0] - 2021-05-28
+### Added
+- Compatibility with Firebase Messaging extended to be from 17.0.0 to 22.0.0
+- Methods to retrieve current (async) and the latest known (blocking) location.
+### Fixed
+- NPE crash in Gson trying to deserialize empty collection
+
 ## [5.0.0] - 2021-05-23
 ### Added
 - Geotag method returns current device location or the reason, why it can't be retrieved
