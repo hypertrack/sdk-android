@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.2.0] - 2021-06-07
+### Added
+- Outage resolution API. Use `HyperTrack.getBlockers()` to get the tracking impediments details.
+### Fixed
+- Removed push token caching to resist bug in [firebase-sdk v20.1.1](https://firebase.google.com/support/release-notes/android#messaging_v20-1-1)
+- Sync service (internal) bug fixed
+
 ## [5.1.0] - 2021-05-28
 ### Added
 - Compatibility with Firebase Messaging extended to be from 17.0.0 to 22.0.0
