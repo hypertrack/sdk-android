@@ -1,5 +1,10 @@
 # Changelog
 
+## [5.2.1] - 2021-06-10
+### Fixed
+- Automatic tracking restart on device reboot wasn't working on Android 11 but it's fixed now.
+Background location access permission is required for this flow to work.
+
 ## [5.2.0] - 2021-06-07
 ### Added
 - Outage resolution API. Use `HyperTrack.getBlockers()` to get the tracking impediments details.
