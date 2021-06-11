@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.2.2] - 2021-06-11
+### Fixed
+- Disk access from the main thread on Android 11 devices
+### Changed
+- Switched from range dependency versions declaration to a single version one. Google Services
+plugin doesn't work with range version, so this change is intended to ease the integration effort
+by compromising explicit dependency version specification.
+
 ## [5.2.1] - 2021-06-10
 ### Fixed
 - Automatic tracking restart on device reboot wasn't working on Android 11 but it's fixed now.
