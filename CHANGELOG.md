@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.2.3] - 2021-06-15
+### Fixed
+- SDK now sends outage start timestamp when restarted by push notification.
+
 ## [5.2.2] - 2021-06-11
 ### Fixed
 - Disk access from the main thread on Android 11 devices
