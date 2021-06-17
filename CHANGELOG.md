@@ -1,5 +1,20 @@
 # Changelog
 
+## [5.2.4] - 2021-06-17
+### Fixed
+- Cached location has timestamp that was previously missing. Now it can be examined, if that's
+matters. We still invalidate locations based on accelerometer data when we believe they are no
+longer relevant.
+- Permission denial on a first run wasn't reported on Android 11 (now fixed).
+- Fixed caching issue, that could lead to `isRunning` returns true with service been stopped.
+- Added a separate button to the whitelistening prompt. Now it's possible to review the steps,
+since the dialog remains visible until *Done* is clicked. The behavior is also changed, since the
+state resets back to default when application was terminated by OS with meaningless reason.
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/10487613/122400240-35317b00-cf84-11eb-8787-1910fbec8af3.gif" width="25%" height="25%" />
+</p>
+
 ## [5.2.3] - 2021-06-15
 ### Fixed
 - SDK now sends outage start timestamp when restarted by push notification.
