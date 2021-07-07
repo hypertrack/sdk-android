@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.2.5] - 2021-07-02
+### Changed
+- Added explicit check to ensure we do not add lifecycle observer on the background thread
+(we relied on [framework guarantees before](https://developer.android.com/reference/kotlin/android/content/ContentProvider?hl=en#onCreate()))
+- Ignored start/stop commands are reported as status updates. No concealing on permission change.
+
 ## [5.2.4] - 2021-06-17
 ### Fixed
 - Cached location has timestamp that was previously missing. Now it can be examined, if that's
