@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.3.0] - 2021-07-16
+### Added
+- start/stop commands are stacked to queue and processed one-by-one to prevent race conditions.
+### Fixed
+- SDK now can start tracking if Firebase isn't enabled for the app.
+
 ## [5.2.5] - 2021-07-02
 ### Changed
 - Added explicit check to ensure we do not add lifecycle observer on the background thread
