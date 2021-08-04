@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.4.0] - 2021-08-04
+### Added
+- Mock location outage
+### Removed
+- Sync on app going to background and foreground
+
 ## [5.3.0] - 2021-07-16
 ### Added
 - start/stop commands are stacked to queue and processed one-by-one to prevent race conditions.
