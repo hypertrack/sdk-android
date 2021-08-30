@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.4.1] - 2021-08-04
+### Added
+- Battery data in location events
+- Whitelisting instructions for more device manufacturers
+- SDK_KILLED outage description
+
 ## [5.4.0] - 2021-08-04
 ### Added
 - Mock location outage
