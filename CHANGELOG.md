@@ -1,6 +1,6 @@
 # Changelog
 
-## [5.4.1] - 2021-08-04
+## [5.4.1] - 2021-08-30
 ### Added
 - Battery data in location events
 - Whitelisting instructions for more device manufacturers
