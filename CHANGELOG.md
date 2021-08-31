@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.4.2] - 2021-08-31
+### Fixed
+- Critical bug in whitelisting prompt
+
 ## [5.4.1] - 2021-08-30
 ### Added
 - Battery data in location events
