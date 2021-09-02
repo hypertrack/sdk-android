@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.4.3] - 2021-09-01
+### Fixed
+- SDK_KILLED outage description (added "description" field to health event)
+
 ## [5.4.2] - 2021-08-31
 ### Fixed
 - Critical bug in whitelisting prompt
