@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.4.4] - 2021-10-29
+### Fixed
+- Crash related to notification icon on some Android 11 devices
+
 ## [5.4.3] - 2021-09-01
 ### Fixed
 - SDK_KILLED outage description (added "description" field to health event)
