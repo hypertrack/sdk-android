@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.4.5] - 2021-11-05
+### Fixed
+- Added FLAG_MUTABLE to PendingIntents to avoid crashes on Android 12
+
 ## [5.4.4] - 2021-10-29
 ### Fixed
 - Crash related to notification icon on some Android 11 devices
