@@ -21,8 +21,6 @@
 - Fixed automatic config updates in runtime.
 - Fixed step detection bugs.
 - Fixed ANR triggers.
-### IMPORTANT INFO
-- The size of the SDK increased significantly. We strongly recommend using [Android App Bundles](https://developer.android.com/guide/app-bundle) to reduce the size of downloads for the end users.
 
 ## [5.4.5] - 2021-11-05
 ### Fixed
