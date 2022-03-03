@@ -1,5 +1,27 @@
 # Changelog
 
+## [6.0.1] - 2022-03-01
+### Fixed
+- Crash in SDK internals
+
+## [6.0.0] - 2022-02-23
+### Added
+- Added GPS outage detection.
+- Added battery status reporting. You can check the battery level in our APIs.
+- Added robust location spoofing detection. Any location spoofing attempt is reported in our APIs and dashboards.
+### Changed
+- Improved tracking quality. Now the movement is captured with greater fidelity. This in turn improves visit detection and distance calculations.
+- Improved time to the first location.
+- Improved battery life. SDK now tracks less frequently when there is less movement, which conserves battery life.
+- Improved location mocking in development mode. Use `allowMockLocations()` API in conjunction with disabling cellular/Bluetooth/WiFi assistance in Settings > Location to test how your app reacts to mocked movement.
+- Improved activity recognition detection.
+- Improved configurability of the SDK.
+### Fixed
+- Fixed getLatestLocation API, now it properly returns the latest location sent to the cloud.
+- Fixed automatic config updates in runtime.
+- Fixed step detection bugs.
+- Fixed ANR triggers.
+
 ## [5.4.5] - 2021-11-05
 ### Fixed
 - Added FLAG_MUTABLE to PendingIntents to avoid crashes on Android 12
