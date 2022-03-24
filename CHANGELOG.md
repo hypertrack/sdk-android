@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.0.2] - 2022-03-18
+### Changed
+- The project that uses Hypertrack SDK can be compiled with Android SDK API 30
+
 ## [6.0.1] - 2022-03-01
 ### Fixed
 - Crash in SDK internals
