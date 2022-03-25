@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.0.3] - 2022-03-24
+### Fixed
+- Syncronization issues in SDK key-value storage
+
 ## [6.0.2] - 2022-03-18
 ### Changed
 - The project that uses Hypertrack SDK can be compiled with Android SDK API 30
