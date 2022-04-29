@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.0.4] - 2022-04-29
+### Changed
+- Project no longer exposes ThreeTenBP library
+
 ## [6.0.3] - 2022-03-24
 ### Fixed
 - Syncronization issues in SDK key-value storage
