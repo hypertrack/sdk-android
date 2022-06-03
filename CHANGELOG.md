@@ -1,5 +1,13 @@
 # Changelog
 
+## [6.1.1] - 2022-06-02
+### Fixed
+- ANR issues
+
+## [6.1.0] - 2022-05-27
+### Added
+- Added Availability API
+
 ## [6.0.4] - 2022-04-29
 ### Changed
 - Project no longer exposes ThreeTenBP library
