@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.1.3] - 2022-06-15
+### Fixed
+- Crashes on initialising the SDK in background threads
+
 ## [6.1.2] - 2022-06-09
 ### Fixed
 - Crashes on Android 6 and 7
