@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.1.4] - 2022-06-17
+### Fixed
+- Issues with tracking and availability listeners
+
 ## [6.1.3] - 2022-06-15
 ### Fixed
 - Crashes on initialising the SDK in background threads
