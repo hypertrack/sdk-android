@@ -1,5 +1,18 @@
 # Changelog
 
+## [6.2.0] - 2022-07-18
+### Added
+- Android 12 precise location outage
+### Changed
+- The SDK size was reduced by 75% to 4 MB
+- Immediately reports all outages and their changes in realtime
+- Starts tracking immediately when outages are resolved
+### Fixed
+- Reliably reports killed events
+- Reliably reports battery saver status
+- Registers the device during Firebase errors and reports them
+- Retries on network failures
+
 ## [6.1.4] - 2022-06-17
 ### Fixed
 - Issues with tracking and availability listeners
