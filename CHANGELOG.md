@@ -1,5 +1,10 @@
 # Changelog
 
+## [6.2.1] - 2022-08-26
+### Fixed
+- Adding geotag failure
+- Crash on location services changes
+
 ## [6.2.0] - 2022-07-18
 ### Added
 - Android 12 precise location outage
