@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.2.2] - 2022-08-30
+### Fixed
+- Resolved all potential native library conflicts while reducing the SDK size
+
 ## [6.2.1] - 2022-08-26
 ### Fixed
 - Adding geotag failure
