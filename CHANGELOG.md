@@ -1,5 +1,13 @@
 # Changelog
 
+## [6.3.0] - 2022-09-14
+### Changed
+- When the app is uninstalled completely from the device and then installed back, the device_id will change. This improves the stability of the data coming from the SDK. Now this behavior is the same between Android SDK and iOS SDK.
+- If the user simulates locations when it's prohibited, the SDK still passes real locations through if there are any.
+- Decreased the time sensitivity for first location detection. Results in fewer location_unavailable outages when tracking starts.
+### Fixed
+- Now, all logs are disabled by default and can be enabled by enableDebugLogging()
+
 ## [6.2.2] - 2022-08-30
 ### Fixed
 - Resolved all potential native library conflicts while reducing the SDK size
