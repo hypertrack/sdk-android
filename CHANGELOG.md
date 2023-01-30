@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.4.0] - 2023-01-10
+### Changed
+- Support for the newest version of com.google.android.gms:play-services-location.
+- New outage for API 31 specific crash on starting the foreground service.
+### Fixed
+- Foreground service start crash on API 31.
+
 ## [6.3.0] - 2022-09-14
 ### Changed
 - When the app is uninstalled completely from the device and then installed back, the device_id will change. This improves the stability of the data coming from the SDK. Now this behavior is the same between Android SDK and iOS SDK.
