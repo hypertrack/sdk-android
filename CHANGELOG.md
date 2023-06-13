@@ -1,9 +1,18 @@
 # Changelog
 
+## [6.4.2] - 2023-06-13
+### Fixed
+- Fixed crash on invalid remote config format
+
+## [6.4.1] - 2023-06-08
+### Fixed
+- Kotlin version downgraded to 1.6.21 (to fix compatibility issues
+
 ## [6.4.0] - 2023-01-10
 ### Changed
 - Support for the newest version of com.google.android.gms:play-services-location.
 - New outage for API 31 specific crash on starting the foreground service.
+- Kotlin version upgraded to 1.7.10
 ### Fixed
 - Foreground service start crash on API 31.
 
