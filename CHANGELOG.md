@@ -1,12 +1,65 @@
 # Changelog
 
+## [7.0.1] - 2023-09-13
+### Changes
+- Available Location services:
+    - groupId: `com.hypertrack`, artifactId: `location-services-google`, version: `7.0.1` (uses `com.google.android.gms:play-services-location` in version `21.0.1`)
+    - groupId: `com.hypertrack`, artifactId: `location-services-google-19-0-1`, version: `7.0.1` (uses `com.google.android.gms:play-services-location` in version `19.0.1`)
+- Available Push Notification Services:
+    - groupId: `com.hypertrack`, artifactId: `push-service-firebase`, version: `7.0.1` (uses `com.google.firebase:firebase-messaging` in version `23.1.1`)
+        - The change was made to make the Plugin work with Kotlin 1.5+
+### Fixed
+- Added missing permissions in Location Services Plugins
+- Resolved an issue that could lead to data corruption if the app crashed during a write operation.
+- Ensured that absence of disk storage does not hinder caching of location data when available.
+- Enhanced resilience during outages, especially when the OS suspends the app.
+- Optimized app longevity after receiving a push notification while it's not in the foreground.
+
+## [7.0.0] - 2023-09-01
+### Breaking changes
+- New Maven groupId: `com.hypertrack` and artifactId: `sdk-android`, Gradle short example: `com.hypertrack:sdk-android:7.0.0`.
+- New static Interface `com.hypertrack.sdk.android.HyperTrack` for easier integration.
+- Redesigned SDK API - more ergonomic, requires less code to use.
+- New Plugin architecture for Push Notification Services and Location Services.
+    - The choice of the Google Play Services Location version is independent of the Main HyperTrack SDK.
+    - One plugin of developer's choice for Push Notification and Location Services has to be included in the project configuration.
+    - Available Location services:
+        - groupId: `com.hypertrack`, artifactId: `location-services-google`, version: `7.0.0` (uses `com.google.android.gms:play-services-location` in version `21.0.1`)
+    - Available Push Notification Services:
+        - groupId: `com.hypertrack`, artifactId: `push-service-firebase`, version: `7.0.0` (uses `com.google.firebase:firebase-messaging` in version `23.2.0`)
+- Publishable key is now set in the `AndroidManifest.xml` file in the `<application>` tag as a `<meta-data>` tag with `android:name="HyperTrackPublishableKey"`. All API methods can be accessible at any time from any place in the app by calling them on the static HyperTrack class.
+    - Example:
+    ```
+    <meta-data
+            android:name="HyperTrackPublishableKey"
+            android:value="put-your-publishable-key-here" />
+### Fixes
+- Eliminated ANRs caused by `com.hypertrack.sdk.service.HyperTrackSDKFirebaseMessageReceiver`.
+### Changes
+- Minimal required Android SDK level set to API 19.
+- Target Android SDK level set to API 31.
+- Support for Android API 33.
+### Added
+- New `locate` API. Allows to get a location outside of a tracking session.
+- The SDK is always in sync with our cloud (if internet connection is present), there is no need to call `sync()` anymore.
+- The SDK started working in the x86 32bit Emulators again.
+### Removed
+- Methods for requesting permissions. Similar methods will be added in the future and unified across Android and iOS.
+- Whitelisting prompt. The whitelisting functionality will be a part of a separate library in future releases.
+- Activity permissions are no longer required.
+- `sync()` API.
+
 ## [6.4.2] - 2023-06-13
 ### Fixed
 - Fixed crash on invalid remote config format
 
+## [6.4.2-psl19.1] - 2023-06-23
+### Changed
+- SDK Uses Google Play Services Location in version 19.0.1
+
 ## [6.4.1] - 2023-06-08
 ### Fixed
-- Kotlin version downgraded to 1.6.21 (to fix compatibility issues
+- Kotlin version downgraded to 1.6.21 (to fix compatibility issues)
 
 ## [6.4.0] - 2023-01-10
 ### Changed
