@@ -9,17 +9,15 @@
     - groupId: `com.hypertrack`, artifactId: `push-service-firebase`, version: `7.0.1` (uses `com.google.firebase:firebase-messaging` in version `23.1.1`)
         - The change was made to make the Plugin work with Kotlin 1.5+
 ### Fixed
-- Added missing permissions in Location Services Plugins
+- Added missing permissions in Location Services Plugins.
 - Resolved an issue that could lead to data corruption if the app crashed during a write operation.
 - Ensured that absence of disk storage does not hinder caching of location data when available.
 - Enhanced resilience during outages, especially when the OS suspends the app.
-- Optimized app longevity after receiving a push notification while it's not in the foreground.
 
 ## [7.0.0] - 2023-09-01
-### Breaking changes
+### Changes
 - New Maven groupId: `com.hypertrack` and artifactId: `sdk-android`, Gradle short example: `com.hypertrack:sdk-android:7.0.0`.
-- New static Interface `com.hypertrack.sdk.android.HyperTrack` for easier integration.
-- Redesigned SDK API - more ergonomic, requires less code to use.
+- New, redesigned static Interface `com.hypertrack.sdk.android.HyperTrack` for easier integration - more ergonomic, requires less code to use.
 - New Plugin architecture for Push Notification Services and Location Services.
     - The choice of the Google Play Services Location version is independent of the Main HyperTrack SDK.
     - One plugin of developer's choice for Push Notification and Location Services has to be included in the project configuration.
@@ -33,12 +31,11 @@
     <meta-data
             android:name="HyperTrackPublishableKey"
             android:value="put-your-publishable-key-here" />
-### Fixes
-- Eliminated ANRs caused by `com.hypertrack.sdk.service.HyperTrackSDKFirebaseMessageReceiver`.
-### Changes
 - Minimal required Android SDK level set to API 19.
 - Target Android SDK level set to API 31.
 - Support for Android API 33.
+### Fixes
+- Eliminated ANRs caused by `com.hypertrack.sdk.service.HyperTrackSDKFirebaseMessageReceiver`.
 ### Added
 - New `locate` API. Allows to get a location outside of a tracking session.
 - The SDK is always in sync with our cloud (if internet connection is present), there is no need to call `sync()` anymore.
