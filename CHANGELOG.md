@@ -1,5 +1,10 @@
 # Changelog
 
+## [7.0.2] - 2023-09-26
+
+### Fixed
+- Fixed `addGeotag()` and `location` returning Errors when there is no intent to track 
+
 ## [7.0.1] - 2023-09-13
 ### Changes
 - Available Location services:
