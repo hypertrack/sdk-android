@@ -3,16 +3,18 @@
 ## [7.0.2] - 2023-09-26
 
 ### Fixed
-- Fixed `addGeotag()` and `location` returning Errors when there is no intent to track 
+- Fixed `addGeotag()` and `location` returning Errors when there is no intent to track.
 
 ## [7.0.1] - 2023-09-13
-### Changes
+
+### Changed
 - Available Location services:
     - groupId: `com.hypertrack`, artifactId: `location-services-google`, version: `7.0.1` (uses `com.google.android.gms:play-services-location` in version `21.0.1`)
     - groupId: `com.hypertrack`, artifactId: `location-services-google-19-0-1`, version: `7.0.1` (uses `com.google.android.gms:play-services-location` in version `19.0.1`)
 - Available Push Notification Services:
     - groupId: `com.hypertrack`, artifactId: `push-service-firebase`, version: `7.0.1` (uses `com.google.firebase:firebase-messaging` in version `23.1.1`)
         - The change was made to make the Plugin work with Kotlin 1.5+
+
 ### Fixed
 - Added missing permissions in Location Services Plugins.
 - Resolved an issue that could lead to data corruption if the app crashed during a write operation.
@@ -20,7 +22,8 @@
 - Enhanced resilience during outages, especially when the OS suspends the app.
 
 ## [7.0.0] - 2023-09-01
-### Changes
+
+### Changed
 - New Maven groupId: `com.hypertrack` and artifactId: `sdk-android`, Gradle short example: `com.hypertrack:sdk-android:7.0.0`.
 - New, redesigned static Interface `com.hypertrack.sdk.android.HyperTrack` for easier integration - more ergonomic, requires less code to use.
 - New Plugin architecture for Push Notification Services and Location Services.
@@ -39,12 +42,15 @@
 - Minimal required Android SDK level set to API 19.
 - Target Android SDK level set to API 31.
 - Support for Android API 33.
-### Fixes
+  
+### Fixed
 - Eliminated ANRs caused by `com.hypertrack.sdk.service.HyperTrackSDKFirebaseMessageReceiver`.
+  
 ### Added
 - New `locate` API. Allows to get a location outside of a tracking session.
 - The SDK is always in sync with our cloud (if internet connection is present), there is no need to call `sync()` anymore.
 - The SDK started working in the x86 32bit Emulators again.
+  
 ### Removed
 - Methods for requesting permissions. Similar methods will be added in the future and unified across Android and iOS.
 - Whitelisting prompt. The whitelisting functionality will be a part of a separate library in future releases.
