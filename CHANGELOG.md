@@ -1,5 +1,10 @@
 # Changelog
 
+## [7.0.3] - 2023-09-28
+
+### Fixed
+- Propagation SDK killed reason to the server
+
 ## [7.0.2] - 2023-09-26
 
 ### Fixed
