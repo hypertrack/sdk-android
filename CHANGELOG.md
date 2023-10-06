@@ -8,8 +8,8 @@
 ## [7.0.4] - 2023-10-05
 
 ### Fixed
-- Native crash in some cases on Samsung devices 
-- In `location-services-google`, `location-services-google-19-0-1` plugins: Crash on getting null location value from Google Location Services
+- An intermittent crash on Samsung devices
+- In `location-services-google`, `location-services-google-19-0-1` plugins: A crash when using `locate()`` method when Google Location Services return null Location value 
 
 ## [7.0.3] - 2023-09-28
 
