@@ -1,5 +1,16 @@
 # Changelog
 
+## [7.0.5] - 2023-10-06
+
+### Fixed
+- In `location-services-google`, `location-services-google-19-0-1` plugins: Not sending location and push token values
+
+## [7.0.4] - 2023-10-05
+
+### Fixed
+- Native crash in some cases on Samsung devices 
+- In `location-services-google`, `location-services-google-19-0-1` plugins: Crash on getting null location value from Google Location Services
+
 ## [7.0.3] - 2023-09-28
 
 ### Fixed
@@ -462,7 +473,12 @@ dev/prod credentials usage on the same device).
 ### Added
 - Server to device communication support added. It is possible to start/stop tracking from platform.
 
-
+[7.0.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.0.0
+[7.0.1]: https://github.com/hypertrack/sdk-android/releases/tag/7.0.1
+[7.0.2]: https://github.com/hypertrack/sdk-android/releases/tag/7.0.2
+[7.0.3]: https://github.com/hypertrack/sdk-android/releases/tag/7.0.3
+[7.0.4]: https://github.com/hypertrack/sdk-android/releases/tag/7.0.4
+[7.0.5]: https://github.com/hypertrack/sdk-android/releases/tag/7.0.5
 
 
 
