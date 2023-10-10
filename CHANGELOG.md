@@ -1,20 +1,26 @@
 # Changelog
 
+## [7.0.6] - 2023-10-10
+
+### Fixed
+- Sending unnecessary events to the server on `locate()` call when tracking is active.
+- Improve handling of invalid system location events.
+
 ## [7.0.5] - 2023-10-06
 
 ### Fixed
-- In `location-services-google`, `location-services-google-19-0-1` plugins: Not sending location and push token values
+- In `location-services-google`, `location-services-google-19-0-1` plugins: Not sending location and push token values.
 
 ## [7.0.4] - 2023-10-05
 
 ### Fixed
-- An intermittent crash on Samsung devices
-- In `location-services-google`, `location-services-google-19-0-1` plugins: A crash when using `locate()`` method when Google Location Services return null Location value 
+- An intermittent crash on Samsung devices.
+- In `location-services-google`, `location-services-google-19-0-1` plugins: A crash when using `locate()`` method when Google Location Services return null Location value .
 
 ## [7.0.3] - 2023-09-28
 
 ### Fixed
-- Propagation SDK killed reason to the server
+- Propagation SDK killed reason to the server.
 
 ## [7.0.2] - 2023-09-26
 
