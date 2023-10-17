@@ -44,40 +44,62 @@
 - Enhanced resilience during outages, especially when the OS suspends the app.
 
 ## [7.0.0] - 2023-09-01
+We are excited to announce the release of HyperTrack Android SDK 7.0.0, a major update to our location tracking SDK. This release ensures highest tracking performance, reduces deployed app sizes and comes with an improved API to simplify the integrations. We highly recommend upgrading, but please note this is a breaking change from the previous major version.
 
 ### Changed
-- New Maven groupId: `com.hypertrack` and artifactId: `sdk-android`, Gradle short example: `com.hypertrack:sdk-android:7.0.0`.
-- New, redesigned static Interface `com.hypertrack.sdk.android.HyperTrack` for easier integration - more ergonomic, requires less code to use.
-- New Plugin architecture for Push Notification Services and Location Services.
-    - The choice of the Google Play Services Location version is independent of the Main HyperTrack SDK.
-    - One plugin of developer's choice for Push Notification and Location Services has to be included in the project configuration.
-    - Available Location services:
-        - groupId: `com.hypertrack`, artifactId: `location-services-google`, version: `7.0.0` (uses `com.google.android.gms:play-services-location` in version `21.0.1`)
-    - Available Push Notification Services:
-        - groupId: `com.hypertrack`, artifactId: `push-service-firebase`, version: `7.0.0` (uses `com.google.firebase:firebase-messaging` in version `23.2.0`)
-- Publishable key is now set in the `AndroidManifest.xml` file in the `<application>` tag as a `<meta-data>` tag with `android:name="HyperTrackPublishableKey"`. All API methods can be accessible at any time from any place in the app by calling them on the static HyperTrack class.
+- **WARNING** ⚠️: The device ID will be changed after the update to this version.
+- The **Plugin architecture** was introduced. It enables the SDK to adapt to different dependencies and add configurable logic. See [Plugins](PLUGINS.md) page for more details.
+- The SDK API was fully redesigned to be more ergonomic and to require less code to use.
+- All the API methods can be accessible at any time from any place in the app by calling them on the static HyperTrack class.
+- No need to initialize the SDK by setting publishable key. Now set the key in `AndroidManifest` as Application `meta-data` entry with key `HyperTrackPublishableKey`.
     - Example:
-    ```
-    <meta-data
-            android:name="HyperTrackPublishableKey"
-            android:value="put-your-publishable-key-here" />
+        ```xml
+            <meta-data
+                android:name="HyperTrackPublishableKey"
+                android:value="Put_your_publishable_key_here" />
+        ```
 - Minimal required Android SDK level set to API 19.
 - Target Android SDK level set to API 31.
-- Support for Android API 33.
-  
-### Fixed
-- Eliminated ANRs caused by `com.hypertrack.sdk.service.HyperTrackSDKFirebaseMessageReceiver`.
-  
+- Added support for Android API 33.
+
+
 ### Added
-- New `locate` API. Allows to get a location outside of a tracking session.
-- The SDK is always in sync with our cloud (if internet connection is present), there is no need to call `sync()` anymore.
-- The SDK started working in the x86 32bit Emulators again.
+- New `locate()` API. Allows to get a one-time location and sends it to the cloud even when the device is not tracking or available.
+- The SDK is always in sync with our cloud (if internet connection is present), there is no need to call `syncDeviceSettings()` anymore.
+- `subscribeToErrors()` to get the errors updates.
+- `subscribeToIsAvailable()` to get the availability updates.
+- `subscribeToIsTracking()` to get the tracking state updates.
+- `subscribeToLocation()` to get the location updates. 
+- `errors` variable to get the errors state.
+- `isTracking` getter/setter to get/set the tracking intent of the device.
+- `isAvailable` getter/setter to get/set the availability state of the device.
+- `location` variable to get the last known location or error.
+- `name` variable to get/set the name associated with the device.
+- `metadata` variable to get/set the metadata associated with the device.
+- The SDK now is working in the `x86` 32bit Emulators.
   
 ### Removed
-- Methods for requesting permissions. Similar methods will be added in the future and unified across Android and iOS.
-- Whitelisting prompt. The whitelisting functionality will be a part of a separate library in future releases.
-- Activity permissions are no longer required.
-- `sync()` API.
+- Activity permission is no longer required.
+- `HyperTrack.getInstance()`.
+- `start()`, `stop()` (use `isTracking` variable setter instead)
+- `setDeviceMetadata()` (use `metadata` variable setter instead)
+- `setDeviceName()` (use `name` variable setter instead)
+- `addTrackingListener()`, `removeTrackingListener()` (use `subscribeToIsTracking`, `subscribeToErrors` instead).
+- `addAvailabilityListener()`, `removeAvailabilityListener()` (use `subscribeToIsAvailable`, `subscribeToErrors` instead).
+- `getLatestLocation()` (use `location` variable getter instead).
+- `getAvailability()`, `setAvailability()` (use `isAvailable` variable getter/setter instead).
+- `getCurrentLocation()` (use `locate` API instead).
+- `HyperTrack.getBlockers()` (use `errors` variable instead).
+- `setTrackingNotificationConfig()`
+- `syncDeviceSettings()`.
+- `requestPermissionsIfNecessary()`.
+- `backgroundTrackingRequirement()`
+- `allowMockLocations()`
+- `isRunning()`
+- `enableDebugLogging()`.
+
+### Fixed
+- ANRs caused by `com.hypertrack.sdk.service.HyperTrackSDKFirebaseMessageReceiver`.
 
 ## [6.4.2] - 2023-06-13
 ### Fixed
