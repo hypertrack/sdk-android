@@ -9,13 +9,13 @@
 ## [7.0.5] - 2023-10-06
 
 ### Fixed
-- In `location-services-google`, `location-services-google-19-0-1` plugins: Not sending location and push token values.
+- `location-services-google`, `location-services-google-19-0-1` plugins: Not sending location and push token values.
 
 ## [7.0.4] - 2023-10-05
 
 ### Fixed
 - An intermittent crash on Samsung devices.
-- In `location-services-google`, `location-services-google-19-0-1` plugins: A crash when using `locate()`` method when Google Location Services return null Location value .
+- `location-services-google`, `location-services-google-19-0-1` plugins: A crash when using `locate()` method when Google Location Services return null Location value .
 
 ## [7.0.3] - 2023-09-28
 
@@ -29,16 +29,14 @@
 
 ## [7.0.1] - 2023-09-13
 
+### Added
+- New plugin `location-services-google-19-0-1` that uses `com.google.android.gms:play-services-location` version `19.0.1` (to workaround the breaking change in `20.0.0`).
+
 ### Changed
-- Available Location services:
-    - groupId: `com.hypertrack`, artifactId: `location-services-google`, version: `7.0.1` (uses `com.google.android.gms:play-services-location` in version `21.0.1`)
-    - groupId: `com.hypertrack`, artifactId: `location-services-google-19-0-1`, version: `7.0.1` (uses `com.google.android.gms:play-services-location` in version `19.0.1`)
-- Available Push Notification Services:
-    - groupId: `com.hypertrack`, artifactId: `push-service-firebase`, version: `7.0.1` (uses `com.google.firebase:firebase-messaging` in version `23.1.1`)
-        - The change was made to make the Plugin work with Kotlin 1.5+
+- `push-service-firebase` plugin: the plugin now uses `com.google.firebase:firebase-messaging` version `23.1.1` to make the Plugin work with Kotlin 1.5+.
 
 ### Fixed
-- Added missing permissions in Location Services Plugins.
+- `location-services-google` plugin: Added missing permissions to AndroidManifest.
 - Resolved an issue that could lead to data corruption if the app crashed during a write operation.
 - Ensured that absence of disk storage does not hinder caching of location data when available.
 - Enhanced resilience during outages, especially when the OS suspends the app.
