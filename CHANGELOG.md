@@ -1,5 +1,10 @@
 # Changelog
 
+## [7.0.7] - 2023-11-07
+### Fixed
+- Added native methods to Proguard exceptions
+- Reduced a chance of generating a null (all zeroes) device_id.
+
 ## [7.0.6] - 2023-10-10
 
 ### Fixed
