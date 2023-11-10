@@ -1,6 +1,12 @@
 # Changelog
 
+## [7.0.8] - 2023-11-10
+
+### Fixed
+- This version of the SDK now automatically migrates device_id, name and metadata from versions before 7.0.0. After the user updates the app, those values stay the same, no additional steps required.
+
 ## [7.0.7] - 2023-11-07
+
 ### Fixed
 - Added native methods to Proguard exceptions
 - Reduced a chance of generating a null (all zeroes) device_id.
