@@ -1,5 +1,10 @@
 # Changelog
 
+## [7.0.9] - 2023-11-20
+
+### Fixed
+- Unicode representation of strings (to address crashes in case of non-unicode symbols in device name)
+
 ## [7.0.8] - 2023-11-10
 
 ### Fixed
