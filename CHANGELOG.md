@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.0.10] - 2023-12-06
+
+### Fixed
+- Crash when setting the name with non-ASCII characters
+- Freeze on canceling the subscription multiple times
+
 ## [7.0.9] - 2023-11-20
 
 ### Fixed
@@ -525,6 +531,7 @@ dev/prod credentials usage on the same device).
 [7.0.7]: https://github.com/hypertrack/sdk-android/releases/tag/7.0.7
 [7.0.8]: https://github.com/hypertrack/sdk-android/releases/tag/7.0.8
 [7.0.9]: https://github.com/hypertrack/sdk-android/releases/tag/7.0.9
+[7.0.10]: https://github.com/hypertrack/sdk-android/releases/tag/7.0.10
 
 
 
