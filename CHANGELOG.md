@@ -3,7 +3,7 @@
 ## [7.0.11] - 2023-12-12
 
 ### Changed
-- Addede more comprehensible error message for the case when one of the SDK plugins is missing
+- Added more comprehensible error message for the case when one of the SDK plugins is missing
 
 ## [7.0.10] - 2023-12-06
 
