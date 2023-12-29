@@ -1,5 +1,10 @@
 # Changelog
 
+## [7.1.0] - 2023-12-29
+
+### Added
+- Dynamic publishable key API
+
 ## [7.0.11] - 2023-12-12
 
 ### Changed
@@ -538,6 +543,7 @@ dev/prod credentials usage on the same device).
 [7.0.9]: https://github.com/hypertrack/sdk-android/releases/tag/7.0.9
 [7.0.10]: https://github.com/hypertrack/sdk-android/releases/tag/7.0.10
 [7.0.11]: https://github.com/hypertrack/sdk-android/releases/tag/7.0.11
+[7.1.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.1.0
 
 
 
