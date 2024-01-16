@@ -1,5 +1,14 @@
 # Changelog
 
+## [7.2.0] - 2024-01-16
+
+### Added
+- Uses NTP servers to synchronize time independantly from the OS. Avoids sending data with wrong time information for users who override phone's settings with incorrect values.
+
+### Fixed
+- Mitigates SDK cache file corruption that led to some Android devices loading to device_id values with all zeroes.
+- Reduced network traffic.
+
 ## [7.1.0] - 2023-12-29
 
 ### Added
