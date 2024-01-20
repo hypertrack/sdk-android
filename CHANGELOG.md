@@ -1,5 +1,13 @@
 # Changelog
 
+## [7.3.0] - 2024-01-20
+
+### Added
+- Reports drivers who change the time on the phone. Changing time doesn't affect the data.
+
+### Fixed
+- Prevents data corruption by forcing OS to write the data to disk on every write.
+
 ## [7.2.0] - 2024-01-16
 
 ### Added
@@ -554,6 +562,7 @@ dev/prod credentials usage on the same device).
 [7.0.11]: https://github.com/hypertrack/sdk-android/releases/tag/7.0.11
 [7.1.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.1.0
 [7.2.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.2.0
+[7.3.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.3.0
 
 
 
