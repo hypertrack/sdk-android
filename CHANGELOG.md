@@ -20,7 +20,7 @@
 ## [7.1.0] - 2023-12-29
 
 ### Added
-- Dynamic publishable key API
+- New Dynamic publishable key API allows to set the publishable key later in the app lifecycle. It should be used only when there is no other way around it and it's impossible to know the publishable key in advance at the build time. Please contact us if this matches your use case.
 
 ## [7.0.11] - 2023-12-12
 
