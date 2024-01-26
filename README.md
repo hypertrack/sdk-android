@@ -8,5 +8,3 @@
 [Integration guide](https://hypertrack.com/docs/install-sdk-android)
 
 [SDK API Reference](https://hypertrack.github.io/mobile/sdk-android/latest/-hyper-track%20-s-d-k%20for%20-android/com.hypertrack.sdk.android/-hyper-track/index.html)
-
-[JavaDoc](https://hypertrack.github.io/sdk-android-hidden/javadoc/latest/)
