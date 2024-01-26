@@ -1,5 +1,13 @@
 # Changelog
 
+## [7.4.0] - 2024-01-26
+
+### Added
+- Improved reporting of battery status and percentage changes.
+- 
+### Fixed
+- Fixed over-reporting of `location_unavailable` outage.
+
 ## [7.3.0] - 2024-01-20
 
 ### Added
