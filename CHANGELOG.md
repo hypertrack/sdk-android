@@ -4,7 +4,7 @@
 
 ### Added
 - Improved reporting of battery status and percentage changes.
-- 
+
 ### Fixed
 - Fixed over-reporting of `location_unavailable` outage.
 
@@ -571,6 +571,6 @@ dev/prod credentials usage on the same device).
 [7.1.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.1.0
 [7.2.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.2.0
 [7.3.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.3.0
-
+[7.4.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.4.0
 
 
