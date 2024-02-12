@@ -1,5 +1,10 @@
 # Changelog
 
+## [7.4.1] - 2024-02-12
+
+### Fixed
+- Reduced instances where memory and network spikes could cause crashes or excessive battery drain.  
+
 ## [7.4.0] - 2024-01-26
 
 ### Added
