@@ -1,5 +1,10 @@
 # Changelog
 
+## [7.4.2] - 2024-02-13
+
+### Fixed
+- Fixed timestamp data lagging behind after the phone went through a deep sleep while the SDK was tracking.
+
 ## [7.4.1] - 2024-02-12
 
 ### Fixed
