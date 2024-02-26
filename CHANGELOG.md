@@ -1,5 +1,10 @@
 # Changelog
 
+## [7.4.3] - 2024-02-26
+
+### Fixed
+- Resolved an issue where the SDK would enter an undefined state if the tracking service was restarted by the OS due to low memory conditions, specifically on some Samsung and Motorola devices.
+
 ## [7.4.2] - 2024-02-13
 
 ### Fixed
