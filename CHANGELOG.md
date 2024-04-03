@@ -1,5 +1,22 @@
 # Changelog
 
+## [7.5.0] - 2024-04-03
+
+### Added
+
+- Support for tracking orders with geotags.
+  - New [`addGeotag(orderHandle, orderStatus, metadata)`](https://hypertrack.github.io/mobile/sdk-android/latest/-hyper-track%20-s-d-k%20for%20-android/com.hypertrack.sdk.android/-hyper-track/add-geotag.html) function
+  - [`OrderStatus`](https://hypertrack.github.io/mobile/sdk-android/latest/-hyper-track%20-s-d-k%20for%20-android/com.hypertrack.sdk.android/-hyper-track/-order-status/index.html) can be `.ClockIn` | `.ClockOut` | `.Custom("your_status")`
+  - Use this when users clock in/out of work in your app to honor their work time (see [Clock in/out Tagging](https://hypertrack.com/docs/clock-inout-tracking#add-clock-inout-events-to-a-shift-timeline) guide for more info)
+- New `HyperTrackAllowMockLocation` AndroidManifest.xml meta-data to support mock locations in development testing.
+- Sticky foreground service notification customization to allow customers to better communicate why their users are being tracked. 
+  - New `HyperTrackForegroundNotificationTitle` AndroidManifest.xml meta-data to change foreground notification title.
+  - New `HyperTrackForegroundNotificationText` AndroidManifest.xml meta-data to change foreground notification message.
+- Support for Android 14
+
+### Changed 
+- Better data batching to optimize battery usage
+
 ## [7.4.3] - 2024-02-26
 
 ### Fixed
