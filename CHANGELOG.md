@@ -619,5 +619,6 @@ dev/prod credentials usage on the same device).
 [7.4.3]: https://github.com/hypertrack/sdk-android/releases/tag/7.4.3
 [7.5.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.0
 [7.5.1]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.1
+[7.5.2]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.2
 
 
