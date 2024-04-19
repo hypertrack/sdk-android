@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.5.2] - 2024-04-17
+
+### Fixed
+
+- Crash on Android API 22 and lower caused by incompatibe binary version
+
 ## [7.5.1] - 2024-04-06
 
 ### Fixed
