@@ -1,5 +1,16 @@
 # Changelog
 
+## [7.5.4] - 2024-05-13
+
+### Changed
+
+- Improved documentation for `addGeotag()` methods
+
+### Fixed
+
+- Fixes and improvements for internal error reporting
+- Fixed a bug that led to a small event loss
+
 ## [7.5.3] - 2024-04-23
 
 ### Fixed
@@ -841,3 +852,4 @@ We are excited to announce the release of HyperTrack Android SDK 7.0.0, a major 
 [7.5.1]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.1
 [7.5.2]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.2
 [7.5.3]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.3
+[7.5.4]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.4
