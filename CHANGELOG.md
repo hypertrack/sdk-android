@@ -21,7 +21,7 @@
 
 ### Fixed
 
-- Crash on Android API 22 and lower caused by incompatibe binary version
+- Crash on Android API 22 and lower caused by incompatible binary version
 
 ## [7.5.1] - 2024-04-06
 
