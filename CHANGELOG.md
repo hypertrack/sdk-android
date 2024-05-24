@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.5.5] - 2024-05-24
+
+### Fixed
+
+- SDK failing to track on Android 14 if the host app has `targetSDK` 34 if the user started tracking with disabled Location services
+
 ## [7.5.4] - 2024-05-13
 
 ### Changed
