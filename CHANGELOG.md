@@ -859,3 +859,5 @@ We are excited to announce the release of HyperTrack Android SDK 7.0.0, a major 
 [7.5.2]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.2
 [7.5.3]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.3
 [7.5.4]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.4
+[7.5.5]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.5
+
