@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.6.0] - 2024-06-05
+
+- 🆕 New `HyperTrack.workerHandle` property can be used to identify workers
+  - We observed our customers identify worker devices via `HyperTrack.metadata`, so we decided to make it a first class citizen in our API!
+  - If you previously used `metadata` to identify workers, we suggest using `workerHandle` for this purpose instead. 👈
+
 ## [7.5.5] - 2024-05-24
 
 ### Fixed
@@ -860,4 +866,4 @@ We are excited to announce the release of HyperTrack Android SDK 7.0.0, a major 
 [7.5.3]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.3
 [7.5.4]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.4
 [7.5.5]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.5
-
+[7.6.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.6.0
