@@ -1,6 +1,43 @@
 # Changelog
 
+## [7.7.0] - 2024-08-21
+
+### Added
+
+- Support for on-device geofencing via new `HyperTrack.orders["my_order"].isInsideGeofence` property
+  - To learn more about how to best use this new feature see our guide here: https://developer.hypertrack.com/docs/clock-in-out-tagging#verify-shift-presence-before-starting-work
+
+Example use for worker clock in:
+
+```
+fun handlePresence(isInsideResult: Result<Boolean, HyperTrackLocationError>) {
+  when (isInsideResult) {
+    is Result.Success -> {
+      val isInside = isInsideResult.getOrNull() ?: false
+      if (isInside) {
+        // allow worker to clock in for the shift
+      } else {
+        // "to clock in you must be at order destination"
+      }
+    }
+    is Result.Failure -> {
+      // resolve any tracking errors to obtain geofence presence
+    }
+  }
+}
+
+// Check if a worker is inside an order's geofence
+handlePresence(HyperTrack.orders["my_order"]?.isInsideGeofence())
+
+// Or, listen to order.isInsideGeofence changes
+HyperTrack.subscribeToOrders { orders ->
+    handlePresence(orders["my_order"]?.isInsideGeofence())
+}
+```
+
 ## [7.6.0] - 2024-06-05
+
+### Added
 
 - 🆕 New `HyperTrack.workerHandle` property can be used to identify workers
   - We observed our customers identify worker devices via `HyperTrack.metadata`, so we decided to make it a first class citizen in our API!
@@ -867,3 +904,4 @@ We are excited to announce the release of HyperTrack Android SDK 7.0.0, a major 
 [7.5.4]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.4
 [7.5.5]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.5
 [7.6.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.6.0
+[7.7.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.7.0
