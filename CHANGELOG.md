@@ -27,11 +27,11 @@ fun handlePresence(isInsideResult: Result<Boolean, HyperTrackLocationError>) {
 }
 
 // Check if a worker is inside an order's geofence
-handlePresence(HyperTrack.orders["my_order"]?.isInsideGeofence())
+handlePresence(HyperTrack.orders["my_order"]?.isInsideGeofence)
 
 // Or, listen to order.isInsideGeofence changes
 HyperTrack.subscribeToOrders { orders ->
-    handlePresence(orders["my_order"]?.isInsideGeofence())
+  handlePresence(orders["my_order"]?.isInsideGeofence)
 }
 ```
 
