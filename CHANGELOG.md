@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.8.0] - 2024-09-05
+
+### Added
+
+- Support for Motion & Activity detection
+  - If your app asks for permission and the user grants it, you will have better activity detection in polylines
+
 ## [7.7.0] - 2024-08-21
 
 ### Added
@@ -905,3 +912,4 @@ We are excited to announce the release of HyperTrack Android SDK 7.0.0, a major 
 [7.5.5]: https://github.com/hypertrack/sdk-android/releases/tag/7.5.5
 [7.6.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.6.0
 [7.7.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.7.0
+[7.8.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.8.0
