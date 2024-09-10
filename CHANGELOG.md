@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.8.1] - 2024-09-10
+
+### Fixed
+
+- Fixed issue preventing the SDK to work when the app is installed in Work profile
+
 ## [7.8.0] - 2024-09-05
 
 ### Added
@@ -913,3 +919,4 @@ We are excited to announce the release of HyperTrack Android SDK 7.0.0, a major 
 [7.6.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.6.0
 [7.7.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.7.0
 [7.8.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.8.0
+[7.8.1]: https://github.com/hypertrack/sdk-android/releases/tag/7.8.1
