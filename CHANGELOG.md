@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.8.2] - 2024-09-11
+
+### Fixed
+
+- Fixed issue that prevented device registration if the Activity Service plugin wasn't provided
+
 ## [7.8.1] - 2024-09-10
 
 ### Fixed
