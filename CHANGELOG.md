@@ -1,16 +1,22 @@
 # Changelog
 
+## [7.8.3] - 2024-09-24
+
+### Fixed
+
+- Fixed the issue with starting foreground service from background in some cases
+
 ## [7.8.2] - 2024-09-11
 
 ### Fixed
 
-- Fixed issue that prevented device registration if the Activity Service plugin wasn't provided
+- Fixed the issue that prevented device registration if the Activity Service plugin wasn't provided
 
 ## [7.8.1] - 2024-09-10
 
 ### Fixed
 
-- Fixed issue preventing the SDK to work when the app is installed in Work profile
+- Fixed the issue preventing the SDK to work when the app is installed in Work profile
 
 ## [7.8.0] - 2024-09-05
 
@@ -927,3 +933,4 @@ We are excited to announce the release of HyperTrack Android SDK 7.0.0, a major 
 [7.8.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.8.0
 [7.8.1]: https://github.com/hypertrack/sdk-android/releases/tag/7.8.1
 [7.8.2]: https://github.com/hypertrack/sdk-android/releases/tag/7.8.2
+[7.8.3]: https://github.com/hypertrack/sdk-android/releases/tag/7.8.3
