@@ -1,5 +1,16 @@
 # Changelog
 
+## [7.8.4] - 2024-10-18
+
+### Changed
+
+- Data batching configuration changes now take effect immediately
+- `Permissions.Notification.Denied` Error is deprecated, the Notifications permission is not required for tracking anymore
+
+### Fixed
+
+- A rare issue that could cause location events to be dropped under certain conditions
+
 ## [7.8.3] - 2024-09-24
 
 ### Fixed
