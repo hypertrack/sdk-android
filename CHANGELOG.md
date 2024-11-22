@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.9.0] - 2024-11-22
+
+### Changed
+
+- `HyperTrack.location` returns the latest location (previously distance filtered)
+
 ## [7.8.4] - 2024-10-18
 
 ### Changed
@@ -946,3 +952,4 @@ We are excited to announce the release of HyperTrack Android SDK 7.0.0, a major 
 [7.8.2]: https://github.com/hypertrack/sdk-android/releases/tag/7.8.2
 [7.8.3]: https://github.com/hypertrack/sdk-android/releases/tag/7.8.3
 [7.8.4]: https://github.com/hypertrack/sdk-android/releases/tag/7.8.4
+[7.9.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.9.0
