@@ -1,5 +1,21 @@
 # Changelog
 
+## [7.10.0] - 2024-01-17
+
+### Added
+
+- New `HyperTrack.allowMockLocation` getter/setter which can be used to allow mock location(s).
+  - Use this API **only if** modifying the compiled `HyperTrackAllowMockLocation` AndroidManifest.xml value is insufficient for your needs.
+    - example: if for some reason you aren't able to recompile with `HyperTrackAllowMockLocation` set to `true` for your prod app QA mock location tests.
+
+### Changed
+
+- Fixes and improvements to SDK runtime efficiency
+
+### Fixed
+
+- A rare crash related to Foreground Service lifecycle misbehavior (OS API induced)
+
 ## [7.9.1] - 2024-12-05
 
 ### Changed
