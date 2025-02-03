@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.11.0] - 2024-02-03
+
+### Changed
+
+- Fixes and improvements to SDK runtime efficiency
+
 ## [7.10.0] - 2024-01-17
 
 ### Added
@@ -977,3 +983,4 @@ We are excited to announce the release of HyperTrack Android SDK 7.0.0, a major 
 [7.9.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.9.0
 [7.9.1]: https://github.com/hypertrack/sdk-android/releases/tag/7.9.1
 [7.10.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.10.0
+[7.11.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.11.0
