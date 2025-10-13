@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.12.0] - 2025-09-30
+
+### Added
+
+- Creating orders with Orders API
+
 ## [7.11.4] - 2024-03-14
 
 ### Changed
