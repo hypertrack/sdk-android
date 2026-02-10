@@ -6,6 +6,10 @@
 
 - Creating orders with Orders API
 
+### Changed
+
+- Set memory page size to 16KB
+
 ## [7.11.4] - 2024-03-14
 
 ### Changed
