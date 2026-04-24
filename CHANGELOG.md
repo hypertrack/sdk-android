@@ -1,5 +1,17 @@
 # Changelog
 
+## [7.13.0] - 2026-04-23
+
+### Changed
+
+- Improved responsiveness of order geofence crossing updates by flushing the crossing location together with the current batch.
+
+### Fixed
+
+- Fixed SDK exponential backoff so reconnection retries happen promptly after connectivity loss.
+- Fixed batching edge cases around battery-change location events.
+- Fixed cases where state attached to emitted events could be stale.
+
 ## [7.12.0] - 2025-09-30
 
 ### Added
@@ -1023,3 +1035,4 @@ We are excited to announce the release of HyperTrack Android SDK 7.0.0, a major 
 [7.11.3]: https://github.com/hypertrack/sdk-android/releases/tag/7.11.3
 [7.11.4]: https://github.com/hypertrack/sdk-android/releases/tag/7.11.4
 [7.12.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.12.0
+[7.13.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.13.0
