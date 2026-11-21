@@ -1,5 +1,18 @@
 # Changelog
 
+## [7.15.0] - 2026-11-21
+
+### Fixed
+
+- Fixed a case where a phone stopped sending locations after Location Services were turned back on. This could happen after toggling airplane mode.
+- Fixed an out-of-memory crash that could occur on devices with a large amount of saved tracking data.
+- Fixed an issue on devices upgraded from older SDK versions where tracking could stay on after your app stopped it, or a worker’s availability could be incorrect.
+- Fixed events appearing out of order in a worker’s tracking history.
+
+### Security
+
+- The SDK now rejects compromised eMudhra certificates when connecting to HyperTrack. [Security advisory](https://rustsec.org/advisories/RUSTSEC-2026-0381.html)
+
 ## [7.14.0] - 2026-08-21
 
 ### Changed
@@ -1059,3 +1072,4 @@ We are excited to announce the release of HyperTrack Android SDK 7.0.0, a major 
 [7.12.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.12.0
 [7.13.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.13.0
 [7.14.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.14.0
+[7.15.0]: https://github.com/hypertrack/sdk-android/releases/tag/7.15.0
